@@ -8,4 +8,5 @@ USER mssql
 RUN /opt/mssql/bin/mssql-conf set sqlagent.enabled true
 RUN /opt/mssql/bin/mssql-conf set hadr.hadrenabled  1
 RUN /opt/mssql/bin/mssql-conf set memory.memorylimitmb 2048
+RUN systemctl restart mssql-server.service
 CMD /bin/bash ./entrypoint.sh
